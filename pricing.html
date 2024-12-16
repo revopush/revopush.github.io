@@ -32,14 +32,19 @@
   </script>
 </head>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3WM2KH2M75"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-3WM2KH2M75');
+    function gtag_report_conversion(url) {
+        var callback = function () {
+            if (typeof(url) != 'undefined') {
+                window.location = url;
+            }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11497466208/0GpMCOry6PcZEODSteoq',
+            'event_callback': callback
+        });
+        return false;
+    }
 </script>
 
 <body>
@@ -247,7 +252,7 @@
           <h3 class="mb-8 text-2xl font-semibold md:text-[28px] md:leading-[1.42] text-dark dark:text-white">
             Send us a Message
           </h3>
-          <form method="POST" action="https://formspree.io/f/mqakbrye" onsubmit="return gtag_report_conversion();">
+          <form id="leadForm"  method="POST" action="https://formspree.io/f/mqakbrye">
             <div class="mb-[22px]">
               <label for="email" class="block mb-4 text-sm text-body-color dark:text-dark-6">Email*</label>
               <input type="email" name="email" placeholder="example@yourmail.com"
@@ -259,7 +264,7 @@
                         class="bg-transparent w-full text-body-color dark:text-dark-6 placeholder:text-body-color/60 resize-none border-0 border-b border-[#f1f1f1] dark:border-dark-3 pb-3 focus:border-primary focus:outline-none"></textarea>
             </div>
             <div class="mb-0">
-              <button type="submit"
+              <button id="submitButton" type="submit"
                       class="inline-flex items-center justify-center px-10 py-3 text-base font-medium text-white transition duration-300 ease-in-out rounded-md bg-primary hover:bg-blue-dark">
                 Send
               </button>
@@ -1067,19 +1072,24 @@
 </script>
 
 <script>
-    function gtag_report_conversion(url) {
-        var callback = function () {
-            if (typeof(url) != 'undefined') {
-                window.location = url;
-            }
-        };
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11497466208/0GpMCOry6PcZEODSteoq',
-            'event_callback': callback
-        });
-        return false;
-    }
+    document.getElementById('submitButton').addEventListener('click', function (event) {
+        function sendConversion() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11497466208/0GpMCOry6PcZEODSteoq',
+                'event_callback': function () {
+                    document.getElementById('leadForm').submit();
+                }
+            });
+        }
+
+        sendConversion();
+
+        setTimeout(function () {
+            document.getElementById('leadForm').submit();
+        }, 1000);
+    });
 </script>
+
 
 <script type="text/javascript">
     _linkedin_partner_id = "7904489";
