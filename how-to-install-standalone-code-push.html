@@ -260,10 +260,8 @@
                                     class="mb-2 text-base text-body-color dark:text-dark-6"
                                     data-wow-delay=".1s">
                                 In order to let developers keep using CodePush functionality after App Center is fully
-                                retired,
-                                Microsoft created a standalone version of CodePush Server that can be deployed and used
-                                independently
-                                from App Center itself.
+                                retired, Microsoft created a standalone version of CodePush Server that can be deployed and used
+                                independently from App Center itself.
                             </p>
                             <p
                                     class="mb-6 text-base text-body-color dark:text-dark-6"
@@ -350,7 +348,7 @@
                                     </a>
                                     or upgrade to the latest version. As result, you should be able to run the command
                                     below to see the version number.
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -392,7 +390,7 @@
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Login to Azure account
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -411,7 +409,7 @@
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Select subscription for deployment:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -428,7 +426,7 @@
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Create a resource group for CodePush Server resources:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -443,7 +441,7 @@
                                         </code>
                                     </p>
                                     Help tip: you can find the list of available locations by running
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -460,7 +458,7 @@
                                     We recommend you to select the location that is the closest to your target audience
                                     to provide the best performance and throughput to your users. <br/>
                                     Upon successful creation, you will see output similar to the following :
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 {
     "id": "/subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/codepushselfhosted",
@@ -481,7 +479,7 @@
                                     <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep" class="text-primary hover:text-primary">
                                         Bicep</a> that uses declarative syntax to define Azure resources. We will use a Bicep script to deploy the infrastructure needed to run CodePush Server.
                                         <br/>To be able to do that checkout the CodePush Server repository:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                     <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -499,7 +497,7 @@
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Deploy infrastructure with the next command:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                     <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -516,7 +514,7 @@
                                     OAuth parameters (both GitHub and Microsoft) are optional. It is possible to specify them after the deployment in environment settings of Azure WebApp.
                                     <br/>
                                     Upon successful deployment, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Resource and property changes are indicated with these symbols:
   + Create
@@ -576,7 +574,7 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
                                 <a href="https://learn.microsoft.com/en-us/azure/app-service/" class="text-primary hover:text-primary">
                                     official documentation</a> "Deployment and configuration" section for detailed instructions.
                                     <br/> From <span class="italic">api</span> directory run the following command:
-                                <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                     <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -594,7 +592,7 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
                                     update App settings, Creating zip with contents of directory, build the app and deploy it to the Azure WebApp.
                                 <br/>
                                 Upon successful deployment, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Creating AppServicePlan 'codepush-asp-ccp' or Updating if already exists
 Readonly attribute name will be ignored in class <class 'azure.mgmt.web.v2023_01_01.models._models_py3.AppServicePlan'>
@@ -632,7 +630,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
     </pre>
                                     </div>
                                     Congratulations! You have successfully deployed CodePush Server to Azure and you may open https://&lt;your app name&gt;.azurewebsites.net that will show you welcome message
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="flex-1">
@@ -665,7 +663,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                         Check out the CodePush Server repository:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -683,7 +681,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Install required dependencies by running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -700,7 +698,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Build the CodePush Server management CLI by running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -717,7 +715,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Install the CodePush Server management CLI globally by running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -734,7 +732,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Verify that you are able to run <span class="italic">code-push-standalone</span> commands in your terminal:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -749,7 +747,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                         </code>
                                     </p>
                                     Upon successful deployment, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
   _____        __    ___           __
  / ___/__  ___/ /__ / _ \__ _____ / /
@@ -794,7 +792,7 @@ Options:
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     In terminal run the following command and follow the instructions to create a new account on your CodePush Server.
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -812,7 +810,7 @@ Options:
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Upon successful registration, you will need to put received access key to cli:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 A browser is being launched to authenticate your account. Follow the instructions it displays to complete your login.
 
@@ -825,7 +823,7 @@ Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Create a new app on your CodePush Server by running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -841,14 +839,14 @@ Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                     </p>
                                     We suggest you to create separate application for each platform (iOS, Android) with CodePush server.
                                     This way, you can manage and release updates to them separately. Example
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 code-push-standalone app add MyApp-Android
 code-push-standalone app add MyApp-iOS</code>
                                            </pre>
                                     </div>
                                     Upon successful creation, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Successfully added the "MyApp-Android" app, along with the following default deployments:
 ┌────────────┬────────────────────────────────────────┐
@@ -891,7 +889,7 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Open <span class="italic">Info.plist</span> file in your Xcode project and add the following lines, replacing <span class="italic">server-url</span> with your CodePush server location
                                     and <span class="italic">deployment-key</span> with the deployment key of the deployment you want to target.
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;key&gt;CodePushDeploymentKey&lt;/key&gt;
 &lt;string&gt;deployment-key&lt;/string&gt;
@@ -914,7 +912,7 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Open <span class="italic">strings.xml</span> file in your Android project and add the following line, replacing <span class="italic">server-url</span> with your CodePush server location
                                     and <span class="italic">deployment-key</span> with the deployment key of the deployment you want to target.
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;string moduleConfig=&quot;true&quot; name=&quot;CodePushDeploymentKey&quot;&gt;deployment-key&lt;/string&gt;
 &lt;string moduleConfig=&quot;true&quot; name=&quot;CodePushServerUrl&quot;&gt;server-url&lt;/string&gt;</code>
@@ -937,7 +935,7 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Navigate to the root of your React Native project and run the following command to release an update to your iOS app:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -953,7 +951,7 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                     </p>
                                     This command will create a new release for the <span class="italic">MyApp-iOS</span> app, targeting the <span class="italic">ios</span> platform, and output the generated bundle to the <span class="italic">./CodePush</span> directory.
                                     Upon successful release, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Running "react-native bundle" command:
 
@@ -978,7 +976,7 @@ Successfully released an update containing the "./CodePush" directory to the "St
                                     upload them to the CodePush server, and create a new release for the specified deployment.
                                     <br/>
                                     The full list of options for fine-grained tuning of the release process can be found by running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -995,7 +993,7 @@ Successfully released an update containing the "./CodePush" directory to the "St
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Check deployment history for given application and deployment running:
-                                    <p class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
@@ -1010,7 +1008,7 @@ Successfully released an update containing the "./CodePush" directory to the "St
                                         </code>
                                     </p>
                                     Upon successful execution, you will see output similar to the following:
-                                    <div class="text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 ┌───────┬────────────────┬─────────────┬───────────┬─────────────────┬──────────────────────┐
 │ Label │ Release Time   │ App Version │ Mandatory │ Description     │ Install Metrics      │
