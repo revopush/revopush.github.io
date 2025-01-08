@@ -248,7 +248,7 @@
                                 How to install standalone CodePush Server
                             </h2>
                             <p
-                                    class="mb-2 text-base text-body-color dark:text-dark-6"
+                                    class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
                                     data-wow-delay=".1s">
                                 With <a href="https://learn.microsoft.com/en-us/appcenter/retirement"
                                         class="text-primary hover:text-primary">Microsoft sunsetting App Center and
@@ -257,10 +257,11 @@
                                 updates.
                             </p>
                             <p
-                                    class="mb-2 text-base text-body-color dark:text-dark-6"
+                                    class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
                                     data-wow-delay=".1s">
                                 In order to let developers keep using CodePush functionality after App Center is fully
-                                retired, Microsoft created a standalone version of CodePush Server that can be deployed and used
+                                retired, Microsoft created a standalone version of CodePush Server that can be deployed
+                                and used
                                 independently from App Center itself.
                             </p>
                             <p
@@ -294,7 +295,7 @@
                                 Prerequisites
                             </h3>
                             <p
-                                    class="mb-6 text-base text-body-color dark:text-dark-6"
+                                    class="mb-6 text-base text-justify text-body-color dark:text-dark-6"
                                     data-wow-delay=".1s">
                                 This guide assumes you have a React Native app that is currently using CodePush from App
                                 Center and
@@ -325,10 +326,11 @@
                                 </li>
                             </ul>
                             </p>
-                            <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                            <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
+                               data-wow-delay=".1s">
                                 For user authentication and to register your React Native application on self-managed
-                                server,
-                                a GitHub or Microsoft OAuth application is needed (we will use GitHub OAuth application
+                                server, a GitHub or Microsoft OAuth application is needed (we will use GitHub OAuth
+                                application
                                 in this example.
                                 Please follow <a href="https://docs.github.com/en/apps/oauth-apps"
                                                  class="text-primary hover:text-primary">official documentation</a>
@@ -457,7 +459,7 @@
                                     </p>
                                     We recommend you to select the location that is the closest to your target audience
                                     to provide the best performance and throughput to your users. <br/>
-                                    Upon successful creation, you will see output similar to the following :
+                                    Upon successful creation, you will see output similar to the following:
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 {
@@ -476,11 +478,13 @@
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Azure Resource Manager has a domain specific language called
-                                    <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep" class="text-primary hover:text-primary">
-                                        Bicep</a> that uses declarative syntax to define Azure resources. We will use a Bicep script to deploy the infrastructure needed to run CodePush Server.
-                                        <br/>To be able to do that checkout the CodePush Server repository:
+                                    <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep"
+                                       class="text-primary hover:text-primary">
+                                        Bicep</a> that uses declarative syntax to define Azure resources. We will use a
+                                    Bicep script to deploy the infrastructure needed to run CodePush Server.
+                                    <br/>To be able to do that checkout the CodePush Server repository:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                    <code class="inline-flex">
+                                        <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -491,14 +495,14 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                    </code>
-                                </p>
+                                        </code>
+                                    </p>
                                     and navigate to the <span class="italic">api</span> directory.
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Deploy infrastructure with the next command:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                    <code class="inline-flex">
+                                        <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -509,9 +513,10 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                    </code>
+                                        </code>
                                     </p>
-                                    OAuth parameters (both GitHub and Microsoft) are optional. It is possible to specify them after the deployment in environment settings of Azure WebApp.
+                                    OAuth parameters (both GitHub and Microsoft) are optional. It is possible to specify
+                                    them after the deployment in environment settings of Azure WebApp.
                                     <br/>
                                     Upon successful deployment, you will see output similar to the following:
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
@@ -570,12 +575,15 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
                                     </div>
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                Deploy CodePush to the Azure WebApp created during infrastructure deployment. Follow the Azure WebApp
-                                <a href="https://learn.microsoft.com/en-us/azure/app-service/" class="text-primary hover:text-primary">
-                                    official documentation</a> "Deployment and configuration" section for detailed instructions.
+                                    Deploy CodePush to the Azure WebApp created during infrastructure deployment. Follow
+                                    the Azure WebApp
+                                    <a href="https://learn.microsoft.com/en-us/azure/app-service/"
+                                       class="text-primary hover:text-primary">
+                                        official documentation</a> "Deployment and configuration" section for detailed
+                                    instructions.
                                     <br/> From <span class="italic">api</span> directory run the following command:
-                                <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                    <code class="inline-flex">
+                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                                        <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -586,12 +594,14 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
                                                     </span>
                                                 </span>
                                             </span>
-                                    </code>
-                                </p>
-                                Be patient, it may take a few minutes to build and deploy the app. In the backgroud Azure will crete AppServicePlan,
-                                    update App settings, Creating zip with contents of directory, build the app and deploy it to the Azure WebApp.
-                                <br/>
-                                Upon successful deployment, you will see output similar to the following:
+                                        </code>
+                                    </p>
+                                    Be patient, it may take a few minutes to build and deploy the app. In the backgroud
+                                    Azure will crete AppServicePlan,
+                                    update App settings, Creating zip with contents of directory, build the app and
+                                    deploy it to the Azure WebApp.
+                                    <br/>
+                                    Upon successful deployment, you will see output similar to the following:
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Creating AppServicePlan 'codepush-asp-ccp' or Updating if already exists
@@ -629,7 +639,9 @@ Status: Site started successfully. Time: 395(s)
 You can launch the app at http://&lt;app name from previous step&gt;.azurewebsites.net</code>
     </pre>
                                     </div>
-                                    Congratulations! You have successfully deployed CodePush Server to Azure and you may open https://&lt;your app name&gt;.azurewebsites.net that will show you welcome message
+                                    Congratulations! You have successfully deployed CodePush Server to Azure and you may
+                                    open https://&lt;your app name&gt;.azurewebsites.net that will show you welcome
+                                    message
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
@@ -641,19 +653,66 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                             </span>
                                         </code>
                                     </p>
-                            </li>
-                        </ul>
+                                </li>
+                            </ul>
+
+                            <p class="mb-4 text-base text-justify italic text-body-color dark:text-dark-6"
+                               data-wow-delay=".1s">
+                                At Revopush, we offer expert consulting services to guide you through the entire process
+                                of installing and configuring a standalone CodePush Server in your cloud environment.
+                                We handle the complexities of infrastructure provisioning, server configuration, and
+                                integration with your existing systems, so you can focus on delivering value to your
+                                users.
+                            </p>
+                            <p class="mb-4 text-base text-justify italic text-body-color dark:text-dark-6"
+                               data-wow-delay=".1s">
+                                Managing a self-hosted CodePush Server can be challenging without proper expertise.
+                                It requires a deep understanding of the underlying infrastructure, security, and
+                                maintenance requirements.
+                                Revopush offers a powerful SaaS solution for over-the-air (OTA) CodePush updates, packed
+                                with additional benefits:
+                            <ul class="list-disc list-inside mb-6 italic">
+                                <li class="mb-2 text-body-color dark:text-dark-6">
+                                    <span class="font-bold">Comprehensive Pricing:</span>
+                                    Our plans are designed to offer exceptional value, covering everything you need,
+                                    including hosting, maintenance, and upgrades, at a competitive rate.
+                                </li>
+                                <li class="mb-2 text-body-color dark:text-dark-6">
+                                    <span class="font-bold">Advanced Analytics:</span> Gain deep insights into your app update performance,
+                                    user adoption rates, and error tracking, enabling data-driven decisions to enhance your application lifecycle.
+                                </li>
+                                <li class="mb-2 text-body-color dark:text-dark-6">
+                                    <span class="font-bold">Intuitive and Modern UI:</span> Discover user-friendly
+                                    interface that simplifies every step of the process, including release promotion and rollbacks,
+                                    environment and application management, ensuring a seamless and efficient workflow.
+                                </li>
+                                <li class="mb-2 text-body-color dark:text-dark-6">
+                                    <span class="font-bold">Exclusive Features:</span> Seamless CI/CD pipeline integrations, Code Signing and Integrity Verification,
+                                    differential updates, reducing download sizes and improving user experience, and more.
+                                </li>
+                            </ul>
+                            <ul class="">
+
+                            </ul>
+
+                            </p>
 
                             <h3
                                     class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
                                     data-wow-delay=".1s">
                                 Build and install CodePush management CLI
                             </h3>
-                            <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                To run command of CodePush management CLI you need to have <span class="italic">Node.js</span> and <span class="italic">npm</span> installed on your machine. At the moment
-                                of writing this guide, we used Node.js <span class="italic">v18.20.4</span> and npm <span class="italic">v10.9.1</span> to build and install CodePush management CLI.
+                            <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
+                               data-wow-delay=".1s">
+                                To run command of CodePush management CLI you need to have <span
+                                    class="italic">Node.js</span> and <span class="italic">npm</span> installed on your
+                                machine. At the moment
+                                of writing this guide, we used Node.js <span class="italic">v18.20.4</span> and npm
+                                <span class="italic">v10.9.1</span> to build and install CodePush management CLI.
                                 <br/>
-                                For more information on installing Node.js and npm, please visit the <a href="https://nodejs.org/en/" class="text-primary hover:text-primary">official website</a>.
+                                For more information on installing Node.js and npm, please visit the <a
+                                    href="https://nodejs.org/en/" class="text-primary hover:text-primary">official
+                                website</a>.
                             </p>
                             <h3
                                     class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
@@ -662,7 +721,7 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                             </h3>
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                        Check out the CodePush Server repository:
+                                    Check out the CodePush Server repository:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
@@ -731,7 +790,8 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                     </p>
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Verify that you are able to run <span class="italic">code-push-standalone</span> commands in your terminal:
+                                    Verify that you are able to run <span class="italic">code-push-standalone</span>
+                                    commands in your terminal:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
@@ -791,7 +851,8 @@ Options:
                             </h3>
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                    In terminal run the following command and follow the instructions to create a new account on your CodePush Server.
+                                    In terminal run the following command and follow the instructions to create a new
+                                    account on your CodePush Server.
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
@@ -818,8 +879,10 @@ Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                            </pre>
                                     </div>
 
-                                    This key will be persisted in the <span class="italic">.code-push.config</span> file in user's home folder.
-                                    To terminate current session run <span class="italic">code-push-standalone logout</span> command.
+                                    This key will be persisted in the <span class="italic">.code-push.config</span> file
+                                    in user's home folder.
+                                    To terminate current session run <span
+                                        class="italic">code-push-standalone logout</span> command.
                                 </li>
                                 <li class="mb-2 text-body-color dark:text-dark-6">
                                     Create a new app on your CodePush Server by running:
@@ -837,7 +900,8 @@ Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                             </span>
                                         </code>
                                     </p>
-                                    We suggest you to create separate application for each platform (iOS, Android) with CodePush server.
+                                    We suggest you to create separate application for each platform (iOS, Android) with
+                                    CodePush server.
                                     This way, you can manage and release updates to them separately. Example
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
@@ -868,7 +932,8 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
 </code>
                                            </pre>
                                     </div>
-                                    At this point, you have successfully registered your account and created an app on your CodePush Server.
+                                    At this point, you have successfully registered your account and created an app on
+                                    your CodePush Server.
                                 </li>
                             </ul>
                             <h3
@@ -877,8 +942,10 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                 Configure app to use your new CodePush Server
                             </h3>
                             <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                You need to update your React Native app to query for updates against your new CodePush Server.
-                                Due to React Native nature this change will require you to release new version of the app for AppStore and PlayStore.
+                                You need to update your React Native app to query for updates against your new CodePush
+                                Server.
+                                Due to React Native nature this change will require you to release new version of the
+                                app for AppStore and PlayStore.
                             </p>
                             <h4
                                     class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
@@ -887,8 +954,11 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                             </h4>
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Open <span class="italic">Info.plist</span> file in your Xcode project and add the following lines, replacing <span class="italic">server-url</span> with your CodePush server location
-                                    and <span class="italic">deployment-key</span> with the deployment key of the deployment you want to target.
+                                    Open <span class="italic">Info.plist</span> file in your Xcode project and add the
+                                    following lines, replacing <span class="italic">server-url</span> with your CodePush
+                                    server location
+                                    and <span class="italic">deployment-key</span> with the deployment key of the
+                                    deployment you want to target.
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;key&gt;CodePushDeploymentKey&lt;/key&gt;
@@ -910,8 +980,11 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                             </h4>
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Open <span class="italic">strings.xml</span> file in your Android project and add the following line, replacing <span class="italic">server-url</span> with your CodePush server location
-                                    and <span class="italic">deployment-key</span> with the deployment key of the deployment you want to target.
+                                    Open <span class="italic">strings.xml</span> file in your Android project and add
+                                    the following line, replacing <span class="italic">server-url</span> with your
+                                    CodePush server location
+                                    and <span class="italic">deployment-key</span> with the deployment key of the
+                                    deployment you want to target.
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;string moduleConfig=&quot;true&quot; name=&quot;CodePushDeploymentKey&quot;&gt;deployment-key&lt;/string&gt;
@@ -930,11 +1003,13 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                 Releasing updates to your app
                             </h3>
                             <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                Once your app has been configured to query for updates against the CodePush server, you can begin releasing updates to it.
+                                Once your app has been configured to query for updates against the CodePush server, you
+                                can begin releasing updates to it.
                             </p>
                             <ul class="list-decimal list-inside mb-6">
                                 <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Navigate to the root of your React Native project and run the following command to release an update to your iOS app:
+                                    Navigate to the root of your React Native project and run the following command to
+                                    release an update to your iOS app:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">
@@ -949,7 +1024,9 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                             </span>
                                         </code>
                                     </p>
-                                    This command will create a new release for the <span class="italic">MyApp-iOS</span> app, targeting the <span class="italic">ios</span> platform, and output the generated bundle to the <span class="italic">./CodePush</span> directory.
+                                    This command will create a new release for the <span class="italic">MyApp-iOS</span>
+                                    app, targeting the <span class="italic">ios</span> platform, and output the
+                                    generated bundle to the <span class="italic">./CodePush</span> directory.
                                     Upon successful release, you will see output similar to the following:
                                     <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
@@ -972,10 +1049,13 @@ Successfully released an update containing the "./CodePush" directory to the "St
 </code>
                                            </pre>
                                     </div>
-                                    Under the hood, the <span class="italic">code-push-standalone release-react</span> command will bundle your app's JavaScript code and assets,
-                                    upload them to the CodePush server, and create a new release for the specified deployment.
+                                    Under the hood, the <span class="italic">code-push-standalone release-react</span>
+                                    command will bundle your app's JavaScript code and assets,
+                                    upload them to the CodePush server, and create a new release for the specified
+                                    deployment.
                                     <br/>
-                                    The full list of options for fine-grained tuning of the release process can be found by running:
+                                    The full list of options for fine-grained tuning of the release process can be found
+                                    by running:
                                     <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
                                         <code class="inline-flex">
                                             <span class="flex gap-4">

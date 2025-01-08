@@ -1260,6 +1260,10 @@ body {
   fill: currentColor;
 }
 
+.p-2{
+  padding: 0.5rem;
+}
+
 .p-4{
   padding: 1rem;
 }
@@ -1400,6 +1404,10 @@ body {
 
 .text-center{
   text-align: center;
+}
+
+.text-justify{
+  text-align: justify;
 }
 
 .text-2xl{
