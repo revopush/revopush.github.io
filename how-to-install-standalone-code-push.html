@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>
-        Revopush | Cloud Alternative to App Center CodePush
-    </title>
-    <meta name="description"
-          content="React Native app updates with real-time, over-the-air (OTA) deployments. Fully compatible with App Center CodePush, our SaaS solution is the perfect alternative, ensuring instant updates, quick security patches, and seamless user experiences—no delays, no friction.">
-    <meta property="og:title" content="Revopush | Cloud Alternative to App Center CodePush">
-    <meta property="og:site_name" content=Revopush>
-    <meta property="og:url" content=https://revopush.org/>
-    <meta property="og:description"
-          content="React Native app updates with real-time, over-the-air (OTA) deployments. Fully compatible with App Center CodePush, our SaaS solution is the perfect alternative, ensuring instant updates, quick security patches, and seamless user experiences—no delays, no friction.">
-    <meta property="og:type" content=website>
-    <meta property="og:image" content="">
-    <link
-            rel="shortcut icon"
-            href="assets/images/favicon.png"
-            type="image/x-icon"
-    />
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
-    <link rel="stylesheet" href="assets/css/animate.css"/>
-    <link rel="stylesheet" href="assets/css/tailwind.css"/>
-    <!-- Prism.js theme CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>
+    How to install standalone CodePush Server | Revopush Blog
+  </title>
+  <meta name="description"
+        content="This guide will show you how to deploy and configure your own standalone CodePush Server in a self-hosted environment and CodePush Command Line Interface.">
+  <meta property="og:title" content="Revopush | Cloud Alternative to App Center CodePush">
+  <meta property="og:site_name" content=Revopush>
+  <meta property="og:url" content=https://revopush.org/>
+  <meta property="og:description"
+        content="This guide will show you how to deploy and configure your own standalone CodePush Server in a self-hosted environment and CodePush Command Line Interface.">
+  <meta property="og:type" content=website>
+  <meta property="og:image" content="">
+  <link
+          rel="shortcut icon"
+          href="assets/images/favicon.png"
+          type="image/x-icon"
+  />
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="assets/css/animate.css"/>
+  <link rel="stylesheet" href="assets/css/tailwind.css"/>
+  <!-- Prism.js theme CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
 
-    <!-- ==== WOW JS ==== -->
-    <!--  <script src="assets/js/wow.min.js"></script>-->
-    <!--  <script>-->
-    <!--      new WOW().init();-->
-    <!--  </script>-->
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11497466208"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+  <!-- ==== WOW JS ==== -->
+  <!--  <script src="assets/js/wow.min.js"></script>-->
+  <!--  <script>-->
+  <!--      new WOW().init();-->
+  <!--  </script>-->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11497466208"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+      function gtag() {
+          dataLayer.push(arguments);
+      }
 
-        gtag('js', new Date());
+      gtag('js', new Date());
 
-        gtag('config', 'AW-11497466208');
-    </script>
+      gtag('config', 'AW-11497466208');
+  </script>
 </head>
 
 <script>
@@ -67,95 +67,95 @@
 <div
         class="ud-header left-0 top-0 z-40 flex w-full items-center bg-transparent sticky"
 >
-    <div class="container">
-        <div class="relative -mx-4 flex items-center justify-between">
-            <div class="w-60 max-w-full px-4">
-                <a href="index.html" class="navbar-logo block w-full py-5">
-                    <img
-                            src="assets/images/logo/logo-1.svg"
-                            alt="logo"
-                            class="header-logo w-full"
-                    />
-                </a>
-            </div>
-            <div class="flex w-full items-center justify-between px-4">
-                <div>
-                    <button
-                            id="navbarToggler"
-                            class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
-                    >
+  <div class="container">
+    <div class="relative -mx-4 flex items-center justify-between">
+      <div class="w-60 max-w-full px-4">
+        <a href="index.html" class="navbar-logo block w-full py-5">
+          <img
+                  src="assets/images/logo/logo-1.svg"
+                  alt="logo"
+                  class="header-logo w-full"
+          />
+        </a>
+      </div>
+      <div class="flex w-full items-center justify-between px-4">
+        <div>
+          <button
+                  id="navbarToggler"
+                  class="absolute right-4 top-1/2 block -translate-y-1/2 rounded-lg px-3 py-[6px] ring-primary focus:ring-2 lg:hidden"
+          >
                 <span
                         class="relative my-[6px] block h-[2px] w-[30px] bg-white"
                 ></span>
-                        <span
-                                class="relative my-[6px] block h-[2px] w-[30px] bg-white"
-                        ></span>
-                        <span
-                                class="relative my-[6px] block h-[2px] w-[30px] bg-white"
-                        ></span>
-                    </button>
-                    <nav
-                            id="navbarCollapse"
-                            class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6"
-                    >
-                        <ul class="blcok lg:flex 2xl:ml-20">
-                            <li class="group relative">
-                                <a
-                                        href="index.html"
-                                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70"
-                                >
-                                    Home
-                                </a>
-                            </li>
-                            <li class="group relative">
-                                <a
-                                        href="index.html#about"
-                                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
-                                >
-                                    About
-                                </a>
-                            </li>
-                            <li class="group relative">
-                                <a
-                                        href="index.html#pricing"
-                                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
-                                >
-                                    Pricing
-                                </a>
-                            </li>
-                            <!--                  <li class="group relative">-->
-                            <!--                    <a-->
-                            <!--                      href="#team"-->
-                            <!--                      class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"-->
-                            <!--                    >-->
-                            <!--                      Team-->
-                            <!--                    </a>-->
-                            <!--                  </li>-->
-                            <li class="group relative">
-                                <a
-                                        href="#contact"
-                                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
-                                >
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="flex items-center justify-end pr-16 lg:pr-0">
-                    <label
-                            for="themeSwitcher"
-                            class="inline-flex cursor-pointer items-center"
-                            aria-label="themeSwitcher"
-                            name="themeSwitcher"
-                    >
-                        <input
-                                type="checkbox"
-                                name="themeSwitcher"
-                                id="themeSwitcher"
-                                class="sr-only"
-                        />
-                        <span class="block text-white dark:hidden">
+            <span
+                    class="relative my-[6px] block h-[2px] w-[30px] bg-white"
+            ></span>
+            <span
+                    class="relative my-[6px] block h-[2px] w-[30px] bg-white"
+            ></span>
+          </button>
+          <nav
+                  id="navbarCollapse"
+                  class="absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:bg-transparent lg:px-4 lg:py-0 lg:shadow-none dark:lg:bg-transparent xl:px-6"
+          >
+            <ul class="blcok lg:flex 2xl:ml-20">
+              <li class="group relative">
+                <a
+                        href="index.html"
+                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70"
+                >
+                  Home
+                </a>
+              </li>
+              <li class="group relative">
+                <a
+                        href="index.html#about"
+                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
+                >
+                  About
+                </a>
+              </li>
+              <li class="group relative">
+                <a
+                        href="index.html#pricing"
+                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
+                >
+                  Pricing
+                </a>
+              </li>
+              <!--                  <li class="group relative">-->
+              <!--                    <a-->
+              <!--                      href="#team"-->
+              <!--                      class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"-->
+              <!--                    >-->
+              <!--                      Team-->
+              <!--                    </a>-->
+              <!--                  </li>-->
+              <li class="group relative">
+                <a
+                        href="#contact"
+                        class="ud-menu-scroll mx-8 flex py-2 text-base font-medium text-dark group-hover:text-primary dark:text-white lg:ml-7 lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 lg:text-white lg:group-hover:text-white lg:group-hover:opacity-70 xl:ml-10"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex items-center justify-end pr-16 lg:pr-0">
+          <label
+                  for="themeSwitcher"
+                  class="inline-flex cursor-pointer items-center"
+                  aria-label="themeSwitcher"
+                  name="themeSwitcher"
+          >
+            <input
+                    type="checkbox"
+                    name="themeSwitcher"
+                    id="themeSwitcher"
+                    class="sr-only"
+            />
+            <span class="block text-white dark:hidden">
                   <svg
                           class="fill-current"
                           width="24"
@@ -169,7 +169,7 @@
                     />
                   </svg>
                 </span>
-                        <span class="hidden text-white dark:block">
+            <span class="hidden text-white dark:block">
                   <svg
                           class="fill-current"
                           width="24"
@@ -214,144 +214,144 @@
                     </defs>
                   </svg>
                 </span>
-                    </label>
-                    <div class="hidden sm:flex">
-                        <a
-                                href="#"
-                                class="loginBtn px-[22px] py-2 text-base font-medium text-white hover:opacity-70"
-                        >
-                            Sign In
-                        </a>
-                        <a
-                                href="#"
-                                class="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
-                        >
-                            Sign Up
-                        </a>
-                    </div>
-                </div>
-            </div>
+          </label>
+          <div class="hidden sm:flex">
+            <a
+                    href="#"
+                    class="loginBtn px-[22px] py-2 text-base font-medium text-white hover:opacity-70"
+            >
+              Sign In
+            </a>
+            <a
+                    href="#"
+                    class="signUpBtn rounded-md bg-white bg-opacity-20 px-6 py-2 text-base font-medium text-white duration-300 ease-in-out hover:bg-opacity-100 hover:text-dark"
+            >
+              Sign Up
+            </a>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <section class="pb-10 pt-20 dark:bg-dark lg:pb-20 lg:pt-[120px]">
-    <div class="container">
-        <div class="flex flex-wrap justify-center -mx-4">
-            <div class="w-full px-4">
-                <div class="flex flex-wrap -mx-4">
-                    <div class="w-full px-4 lg:w-8/12">
-                        <div>
-                            <h2
-                                    class="wow fadeInUp mb-8 text-2xl font-bold text-dark dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28]"
-                                    data-wow-delay=".1s">
-                                How to install standalone CodePush Server
-                            </h2>
-                            <p
-                                    class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
-                                    data-wow-delay=".1s">
-                                With <a href="https://learn.microsoft.com/en-us/appcenter/retirement"
-                                        class="text-primary hover:text-primary">Microsoft sunsetting App Center and
-                                CodePush</a>,
-                                many in the React Native community are seeking alternatives for over-the-air (OTA)
-                                updates.
-                            </p>
-                            <p
-                                    class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
-                                    data-wow-delay=".1s">
-                                In order to let developers keep using CodePush functionality after App Center is fully
-                                retired, Microsoft created a standalone version of CodePush Server that can be deployed
-                                and used
-                                independently from App Center itself.
-                            </p>
-                            <p
-                                    class="mb-6 text-base text-body-color dark:text-dark-6"
-                                    data-wow-delay=".1s">
-                                This guide will show you how to deploy and configure your own CodePush Server in a
-                                self-hosted environment and CodePush
-                                Command Line Interface.
-                            </p>
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Objectives
-                            </h3>
-                            <ul class="list-disc list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Deploy and configure your own Code Push Server as Azure App Service
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Configure CodePush Server management command line interface (CLI) to interact with
-                                    your new server
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Reconfigure your React Native app to use your new Code Push Server
-                                </li>
-                            </ul>
+  <div class="container">
+    <div class="flex flex-wrap justify-center -mx-4">
+      <div class="w-full px-4">
+        <div class="flex flex-wrap -mx-4">
+          <div class="w-full px-4 lg:w-8/12">
+            <div>
+              <h1
+                      class="wow fadeInUp mb-8 text-2xl font-bold text-dark dark:text-white sm:text-3xl md:text-[35px] md:leading-[1.28]"
+                      data-wow-delay=".1s">
+                How to install standalone CodePush Server
+              </h1>
+              <p
+                      class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
+                      data-wow-delay=".1s">
+                With <a href="https://learn.microsoft.com/en-us/appcenter/retirement"
+                        class="text-primary hover:text-primary">Microsoft sunsetting App Center and
+                CodePush</a>,
+                many in the React Native community are seeking alternatives for over-the-air (OTA)
+                updates.
+              </p>
+              <p
+                      class="mb-2 text-base text-justify text-body-color dark:text-dark-6"
+                      data-wow-delay=".1s">
+                In order to let developers keep using CodePush functionality after App Center is fully
+                retired, Microsoft created a standalone version of CodePush Server that can be deployed
+                and used
+                independently from App Center itself.
+              </p>
+              <p
+                      class="mb-6 text-base text-body-color dark:text-dark-6"
+                      data-wow-delay=".1s">
+                This guide will show you how to deploy and configure your own CodePush Server in a
+                self-hosted environment and CodePush
+                Command Line Interface.
+              </p>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Objectives
+              </h3>
+              <ul class="list-disc list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Deploy and configure your own Code Push Server as Azure App Service
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Configure CodePush Server management command line interface (CLI) to interact with
+                  your new server
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Reconfigure your React Native app to use your new Code Push Server
+                </li>
+              </ul>
 
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Prerequisites
-                            </h3>
-                            <p
-                                    class="mb-6 text-base text-justify text-body-color dark:text-dark-6"
-                                    data-wow-delay=".1s">
-                                This guide assumes you have a React Native app that is currently using CodePush from App
-                                Center and
-                                that you are comfortable using the command line interface (CLI) to release OTA updates,
-                                should have basic
-                                understanding of Azure App Service, Azure Blob Storage and Azure Resource Manager.
-                            </p>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Prerequisites
+              </h3>
+              <p
+                      class="mb-6 text-base text-justify text-body-color dark:text-dark-6"
+                      data-wow-delay=".1s">
+                This guide assumes you have a React Native app that is currently using CodePush from App
+                Center and
+                that you are comfortable using the command line interface (CLI) to release OTA updates,
+                should have basic
+                understanding of Azure App Service, Azure Blob Storage and Azure Resource Manager.
+              </p>
 
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Deploy CodePush Server to Azure
-                            </h3>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Deploy CodePush Server to Azure
+              </h3>
 
-                            <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                To deploy CodePush to Azure, an active Azure account and subscription are needed. During
-                                the deployment process script
-                                will create Azure services needed to run CodePush Server including:
-                            <ul class="list-disc list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Service plan
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    App Service
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Storage account
-                                </li>
-                            </ul>
-                            </p>
-                            <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
-                               data-wow-delay=".1s">
-                                For user authentication and to register your React Native application on self-managed
-                                server, a GitHub or Microsoft OAuth application is needed (we will use GitHub OAuth
-                                application
-                                in this example.
-                                Please follow <a href="https://docs.github.com/en/apps/oauth-apps"
-                                                 class="text-primary hover:text-primary">official documentation</a>
-                                to create one).
-                            </p>
+              <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                To deploy CodePush to Azure, an active Azure account and subscription are needed. During
+                the deployment process script
+                will create Azure services needed to run CodePush Server including:
+              <ul class="list-disc list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Service plan
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  App Service
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Storage account
+                </li>
+              </ul>
+              </p>
+              <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
+                 data-wow-delay=".1s">
+                For user authentication and to register your React Native application on self-managed
+                server, a GitHub or Microsoft OAuth application is needed (we will use GitHub OAuth
+                application
+                in this example.
+                Please follow <a href="https://docs.github.com/en/apps/oauth-apps"
+                                 class="text-primary hover:text-primary">official documentation</a>
+                to create one).
+              </p>
 
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Steps
-                            </h3>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli"
-                                       class="text-primary hover:text-primary">
-                                        Install Azure CLI for your platform
-                                    </a>
-                                    or upgrade to the latest version. As result, you should be able to run the command
-                                    below to see the version number.
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Steps
+              </h3>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  <a href="https://learn.microsoft.com/en-us/cli/azure/install-azure-cli"
+                     class="text-primary hover:text-primary">
+                    Install Azure CLI for your platform
+                  </a>
+                  or upgrade to the latest version. As result, you should be able to run the command
+                  below to see the version number.
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -362,38 +362,38 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                        <br/>
-                                        <span class="whitespace-pre">azure-cli                               2.67.0</span>
-                                        <br/><br/>
-                                        <span class="whitespace-pre">core                                      2.67.0</span>
-                                        <br/>
-                                        <span class="whitespace-pre">telemetry                              1.1.0</span>
-                                        <br/><br/>
-                                        Dependencies:
-                                        <br/>
-                                        <span class="whitespace-pre">msal                                      1.31.0</span>
-                                        <br/>
-                                        <span class="whitespace-pre">azure-mgmt-resource         23.1.1</span>
-                                        <br/><br/>
-                                        Python location '/opt/homebrew/Cellar/azure-cli/2.67.0_1/libexec/bin/python'
-                                        <br/>
-                                        Extensions directory '/Users/username/.azure/cliextensions'
-                                        <br/><br/>
-                                        Python (Darwin) 3.12.8 (main, Dec 3 2024, 18:42:41) [Clang 16.0.0
-                                        (clang-1600.0.26.4)]
-                                        <br/><br/>
-                                        Legal docs and information: aka.ms/AzureCliLegal
-                                        <br/><br/>
+                    </code>
+                    <br/>
+                    <span class="whitespace-pre">azure-cli                               2.67.0</span>
+                    <br/><br/>
+                    <span class="whitespace-pre">core                                      2.67.0</span>
+                    <br/>
+                    <span class="whitespace-pre">telemetry                              1.1.0</span>
+                    <br/><br/>
+                    Dependencies:
+                    <br/>
+                    <span class="whitespace-pre">msal                                      1.31.0</span>
+                    <br/>
+                    <span class="whitespace-pre">azure-mgmt-resource         23.1.1</span>
+                    <br/><br/>
+                    Python location '/opt/homebrew/Cellar/azure-cli/2.67.0_1/libexec/bin/python'
+                    <br/>
+                    Extensions directory '/Users/username/.azure/cliextensions'
+                    <br/><br/>
+                    Python (Darwin) 3.12.8 (main, Dec 3 2024, 18:42:41) [Clang 16.0.0
+                    (clang-1600.0.26.4)]
+                    <br/><br/>
+                    Legal docs and information: aka.ms/AzureCliLegal
+                    <br/><br/>
 
-                                        Your CLI is up-to-date.
+                    Your CLI is up-to-date.
 
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Login to Azure account
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Login to Azure account
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -404,15 +404,15 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    and follow the instructions in the browser.
+                    </code>
+                  </p>
+                  and follow the instructions in the browser.
 
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Select subscription for deployment:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Select subscription for deployment:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -423,13 +423,13 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Create a resource group for CodePush Server resources:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Create a resource group for CodePush Server resources:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -440,11 +440,11 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    Help tip: you can find the list of available locations by running
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                  Help tip: you can find the list of available locations by running
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -455,12 +455,12 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    We recommend you to select the location that is the closest to your target audience
-                                    to provide the best performance and throughput to your users. <br/>
-                                    Upon successful creation, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  We recommend you to select the location that is the closest to your target audience
+                  to provide the best performance and throughput to your users. <br/>
+                  Upon successful creation, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 {
     "id": "/subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/codepushselfhosted",
@@ -474,17 +474,17 @@
     "type": "Microsoft.Resources/resourceGroups"
 }</code>
     </pre>
-                                    </div>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Azure Resource Manager has a domain specific language called
-                                    <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep"
-                                       class="text-primary hover:text-primary">
-                                        Bicep</a> that uses declarative syntax to define Azure resources. We will use a
-                                    Bicep script to deploy the infrastructure needed to run CodePush Server.
-                                    <br/>To be able to do that checkout the CodePush Server repository:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </div>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Azure Resource Manager has a domain specific language called
+                  <a href="https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/overview?tabs=bicep"
+                     class="text-primary hover:text-primary">
+                    Bicep</a> that uses declarative syntax to define Azure resources. We will use a
+                  Bicep script to deploy the infrastructure needed to run CodePush Server.
+                  <br/>To be able to do that checkout the CodePush Server repository:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -495,14 +495,14 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    and navigate to the <span class="italic">api</span> directory.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Deploy infrastructure with the next command:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                  and navigate to the <span class="italic">api</span> directory.
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Deploy infrastructure with the next command:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -513,13 +513,13 @@
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    OAuth parameters (both GitHub and Microsoft) are optional. It is possible to specify
-                                    them after the deployment in environment settings of Azure WebApp.
-                                    <br/>
-                                    Upon successful deployment, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  OAuth parameters (both GitHub and Microsoft) are optional. It is possible to specify
+                  them after the deployment in environment settings of Azure WebApp.
+                  <br/>
+                  Upon successful deployment, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Resource and property changes are indicated with these symbols:
   + Create
@@ -572,18 +572,18 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
       type:             "Microsoft.Web/sites/basicPublishingCredentialsPolicies"
 </code>
     </pre>
-                                    </div>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Deploy CodePush to the Azure WebApp created during infrastructure deployment. Follow
-                                    the Azure WebApp
-                                    <a href="https://learn.microsoft.com/en-us/azure/app-service/"
-                                       class="text-primary hover:text-primary">
-                                        official documentation</a> "Deployment and configuration" section for detailed
-                                    instructions.
-                                    <br/> From <span class="italic">api</span> directory run the following command:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </div>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Deploy CodePush to the Azure WebApp created during infrastructure deployment. Follow
+                  the Azure WebApp
+                  <a href="https://learn.microsoft.com/en-us/azure/app-service/"
+                     class="text-primary hover:text-primary">
+                    official documentation</a> "Deployment and configuration" section for detailed
+                  instructions.
+                  <br/> From <span class="italic">api</span> directory run the following command:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -594,15 +594,15 @@ Scope: /subscriptions/2979d791-c9cc-4cb4-9c25-7ccf2473e983/resourceGroups/ccp_gr
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    Be patient, it may take a few minutes to build and deploy the app. In the backgroud
-                                    Azure will crete AppServicePlan,
-                                    update App settings, Creating zip with contents of directory, build the app and
-                                    deploy it to the Azure WebApp.
-                                    <br/>
-                                    Upon successful deployment, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  Be patient, it may take a few minutes to build and deploy the app. In the backgroud
+                  Azure will crete AppServicePlan,
+                  update App settings, Creating zip with contents of directory, build the app and
+                  deploy it to the Azure WebApp.
+                  <br/>
+                  Upon successful deployment, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Creating AppServicePlan 'codepush-asp-ccp' or Updating if already exists
 Readonly attribute name will be ignored in class <class 'azure.mgmt.web.v2023_01_01.models._models_py3.AppServicePlan'>
@@ -638,12 +638,12 @@ Status: Build successful. Time: 380(s)
 Status: Site started successfully. Time: 395(s)
 You can launch the app at http://&lt;app name from previous step&gt;.azurewebsites.net</code>
     </pre>
-                                    </div>
-                                    Congratulations! You have successfully deployed CodePush Server to Azure and you may
-                                    open https://&lt;your app name&gt;.azurewebsites.net that will show you welcome
-                                    message
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </div>
+                  Congratulations! You have successfully deployed CodePush Server to Azure and you may
+                  open https://&lt;your app name&gt;.azurewebsites.net that will show you welcome
+                  message
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="flex-1">
                                                     <span>
@@ -651,79 +651,184 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                            </ul>
+                    </code>
+                  </p>
+                </li>
+              </ul>
 
-                            <p class="mb-4 text-base text-justify italic text-body-color dark:text-dark-6"
-                               data-wow-delay=".1s">
-                                At Revopush, we offer expert consulting services to guide you through the entire process
-                                of installing and configuring a standalone CodePush Server in your cloud environment.
-                                We handle the complexities of infrastructure provisioning, server configuration, and
-                                integration with your existing systems, so you can focus on delivering value to your
-                                users.
-                            </p>
-                            <p class="mb-4 text-base text-justify italic text-body-color dark:text-dark-6"
-                               data-wow-delay=".1s">
-                                Managing a self-hosted CodePush Server can be challenging without proper expertise.
-                                It requires a deep understanding of the underlying infrastructure, security, and
-                                maintenance requirements.
-                                Revopush offers a powerful SaaS solution for over-the-air (OTA) CodePush updates, packed
-                                with additional benefits:
-                            <ul class="list-disc list-inside mb-6 italic">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    <span class="font-bold">Comprehensive Pricing:</span>
-                                    Our plans are designed to offer exceptional value, covering everything you need,
-                                    including hosting, maintenance, and upgrades, at a competitive rate.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    <span class="font-bold">Advanced Analytics:</span> Gain deep insights into your app update performance,
-                                    user adoption rates, and error tracking, enabling data-driven decisions to enhance your application lifecycle.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    <span class="font-bold">Intuitive and Modern UI:</span> Discover user-friendly
-                                    interface that simplifies every step of the process, including release promotion and rollbacks,
-                                    environment and application management, ensuring a seamless and efficient workflow.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    <span class="font-bold">Exclusive Features:</span> Seamless CI/CD pipeline integrations, Code Signing and Integrity Verification,
-                                    differential updates, reducing download sizes and improving user experience, and more.
-                                </li>
-                            </ul>
-                            <ul class="">
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Revopush approach
+              </h3>
 
-                            </ul>
+              <div
+                      class="wow fadeInUp relative z-10 mb-10 overflow-hidden rounded-[5px] bg-primary/5 px-6 py-8 sm:p-10 md:px-[60px]"
+                      data-wow-delay=".1s
+                    "
+              >
+                <div class="mx-auto max-w-[530px]">
 
-                            </p>
+                  <p
+                          class="mb-[18px] text-base italic leading-[28px] text-dark dark:text-white"
+                  >
 
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Build and install CodePush management CLI
-                            </h3>
-                            <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
-                               data-wow-delay=".1s">
-                                To run command of CodePush management CLI you need to have <span
-                                    class="italic">Node.js</span> and <span class="italic">npm</span> installed on your
-                                machine. At the moment
-                                of writing this guide, we used Node.js <span class="italic">v18.20.4</span> and npm
-                                <span class="italic">v10.9.1</span> to build and install CodePush management CLI.
-                                <br/>
-                                For more information on installing Node.js and npm, please visit the <a
-                                    href="https://nodejs.org/en/" class="text-primary hover:text-primary">official
-                                website</a>.
-                            </p>
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Steps
-                            </h3>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Check out the CodePush Server repository:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </p>
+                  <p class="mb-4 text-base text-justify italic text-dark dark:text-dark-6"
+                     data-wow-delay=".1s">
+                    At <span class="font-bold">Revopush</span>, we offer expert consulting services to guide you through
+                    the entire process
+                    of installing and configuring a standalone CodePush Server in your cloud environment.
+                    We handle the complexities of infrastructure provisioning, server configuration, and
+                    integration with your existing systems, so you can focus on delivering value to your
+                    users.
+                  </p>
+
+                  <p class="mb-4 text-base text-justify italic text-dark dark:text-dark-6"
+                     data-wow-delay=".1s">
+                    Managing a self-hosted CodePush Server can be challenging without proper expertise.
+                    It requires a deep understanding of the underlying infrastructure, security, and
+                    maintenance requirements.
+                    Revopush offers a powerful SaaS solution for over-the-air (OTA) CodePush updates, packed
+                    with additional benefits:
+                  <ul class="list-disc list-inside mb-6 italic">
+                    <li class="mb-2 text-dark dark:text-dark-6">
+                      <span class="font-bold">Comprehensive Pricing:</span>
+                      Our plans are designed to offer exceptional value, covering everything you need,
+                      including hosting, maintenance, and upgrades, at a competitive rate.
+                    </li>
+                    <li class="mb-2 text-dark dark:text-dark-6">
+                      <span class="font-bold">Advanced Analytics:</span> Gain deep insights into your app update
+                      performance,
+                      user adoption rates, and error tracking, enabling data-driven decisions to enhance your
+                      application
+                      lifecycle.
+                    </li>
+                    <li class="mb-2 text-dark dark:text-dark-6">
+                      <span class="font-bold">Intuitive and Modern UI:</span> Discover user-friendly
+                      interface that simplifies every step of the process, including release promotion and rollbacks,
+                      environment and application management, ensuring a seamless and efficient workflow.
+                    </li>
+                    <li class="mb-2 text-dark dark:text-dark-6">
+                      <span class="font-bold">Exclusive Features:</span> Seamless CI/CD pipeline integrations, Code
+                      Signing
+                      and Integrity Verification,
+                      differential updates, reducing download sizes and improving user experience, and more.
+                    </li>
+                  </ul>
+
+                  </p>
+
+                </div>
+                <div class="text-center">
+                  <a
+                          href="/pricing.html"
+                          class="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]"
+                  >
+                    Try Revopush free
+                  </a>
+                </div>
+                <div>
+                      <span class="absolute top-0 left-0">
+                        <svg
+                                width="103"
+                                height="109"
+                                viewBox="0 0 103 109"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <ellipse
+                                  cx="0.483916"
+                                  cy="3.5"
+                                  rx="102.075"
+                                  ry="105.5"
+                                  transform="rotate(180 0.483916 3.5)"
+                                  fill="url(#paint0_linear_2014_9016)"
+                          />
+                          <defs>
+                            <linearGradient
+                                    id="paint0_linear_2014_9016"
+                                    x1="-101.591"
+                                    y1="-50.4346"
+                                    x2="49.1618"
+                                    y2="-49.6518"
+                                    gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stop-color="#3056D3" stop-opacity="0.15"/>
+                              <stop
+                                      offset="1"
+                                      stop-color="white"
+                                      stop-opacity="0"
+                              />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </span>
+                  <span class="absolute bottom-0 right-0">
+                        <svg
+                                width="102"
+                                height="106"
+                                viewBox="0 0 102 106"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <ellipse
+                                  cx="102.484"
+                                  cy="105.5"
+                                  rx="102.075"
+                                  ry="105.5"
+                                  fill="url(#paint0_linear_2014_9017)"
+                          />
+                          <defs>
+                            <linearGradient
+                                    id="paint0_linear_2014_9017"
+                                    x1="0.409163"
+                                    y1="51.5654"
+                                    x2="151.162"
+                                    y2="52.3482"
+                                    gradientUnits="userSpaceOnUse"
+                            >
+                              <stop stop-color="#3056D3" stop-opacity="0.15"/>
+                              <stop
+                                      offset="1"
+                                      stop-color="white"
+                                      stop-opacity="0"
+                              />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                      </span>
+                </div>
+              </div>
+
+
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Build and install CodePush management CLI
+              </h3>
+              <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6"
+                 data-wow-delay=".1s">
+                To run command of CodePush management CLI you need to have <span
+                      class="italic">Node.js</span> and <span class="italic">npm</span> installed on your
+                machine. At the moment
+                of writing this guide, we used Node.js <span class="italic">v18.20.4</span> and npm
+                <span class="italic">v10.9.1</span> to build and install CodePush management CLI.
+                <br/>
+                For more information on installing Node.js and npm, please visit the <a
+                      href="https://nodejs.org/en/" class="text-primary hover:text-primary">official
+                website</a>.
+              </p>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Steps
+              </h3>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Check out the CodePush Server repository:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -734,14 +839,14 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    and navigate to the <span class="italic">cli</span> directory.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Install required dependencies by running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                  and navigate to the <span class="italic">cli</span> directory.
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Install required dependencies by running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -752,13 +857,13 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Build the CodePush Server management CLI by running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Build the CodePush Server management CLI by running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -769,13 +874,13 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Install the CodePush Server management CLI globally by running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Install the CodePush Server management CLI globally by running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -786,14 +891,14 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Verify that you are able to run <span class="italic">code-push-standalone</span>
-                                    commands in your terminal:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Verify that you are able to run <span class="italic">code-push-standalone</span>
+                  commands in your terminal:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -804,10 +909,10 @@ You can launch the app at http://&lt;app name from previous step&gt;.azurewebsit
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    Upon successful deployment, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  Upon successful deployment, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
   _____        __    ___           __
  / ___/__  ___/ /__ / _ \__ _____ / /
@@ -841,20 +946,20 @@ Options:
       --help     Show help  [boolean]
   -v, --version  Show version number  [boolean]</code>
     </pre>
-                                    </div>
-                                </li>
-                            </ul>
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Register your account and app on CodePush Server
-                            </h3>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    In terminal run the following command and follow the instructions to create a new
-                                    account on your CodePush Server.
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </div>
+                </li>
+              </ul>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Register your account and app on CodePush Server
+              </h3>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  In terminal run the following command and follow the instructions to create a new
+                  account on your CodePush Server.
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -865,29 +970,29 @@ Options:
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    and navigate to the <span class="italic">cli</span> directory.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Upon successful registration, you will need to put received access key to cli:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  and navigate to the <span class="italic">cli</span> directory.
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Upon successful registration, you will need to put received access key to cli:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 A browser is being launched to authenticate your account. Follow the instructions it displays to complete your login.
 
 Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                            </pre>
-                                    </div>
+                  </div>
 
-                                    This key will be persisted in the <span class="italic">.code-push.config</span> file
-                                    in user's home folder.
-                                    To terminate current session run <span
-                                        class="italic">code-push-standalone logout</span> command.
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Create a new app on your CodePush Server by running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  This key will be persisted in the <span class="italic">.code-push.config</span> file
+                  in user's home folder.
+                  To terminate current session run <span
+                        class="italic">code-push-standalone logout</span> command.
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Create a new app on your CodePush Server by running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -898,19 +1003,19 @@ Enter your access key:  yQKR17duPW0h9zzfQI_sSI896t4LVJMn2aoEZl</code>
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    We suggest you to create separate application for each platform (iOS, Android) with
-                                    CodePush server.
-                                    This way, you can manage and release updates to them separately. Example
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  We suggest you to create separate application for each platform (iOS, Android) with
+                  CodePush server.
+                  This way, you can manage and release updates to them separately. Example
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 code-push-standalone app add MyApp-Android
 code-push-standalone app add MyApp-iOS</code>
                                            </pre>
-                                    </div>
-                                    Upon successful creation, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                  </div>
+                  Upon successful creation, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Successfully added the "MyApp-Android" app, along with the following default deployments:
 ┌────────────┬────────────────────────────────────────┐
@@ -931,87 +1036,87 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
 └────────────┴────────────────────────────────────────┘
 </code>
                                            </pre>
-                                    </div>
-                                    At this point, you have successfully registered your account and created an app on
-                                    your CodePush Server.
-                                </li>
-                            </ul>
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Configure app to use your new CodePush Server
-                            </h3>
-                            <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                You need to update your React Native app to query for updates against your new CodePush
-                                Server.
-                                Due to React Native nature this change will require you to release new version of the
-                                app for AppStore and PlayStore.
-                            </p>
-                            <h4
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                iOs
-                            </h4>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Open <span class="italic">Info.plist</span> file in your Xcode project and add the
-                                    following lines, replacing <span class="italic">server-url</span> with your CodePush
-                                    server location
-                                    and <span class="italic">deployment-key</span> with the deployment key of the
-                                    deployment you want to target.
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                  </div>
+                  At this point, you have successfully registered your account and created an app on
+                  your CodePush Server.
+                </li>
+              </ul>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Configure app to use your new CodePush Server
+              </h3>
+              <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                You need to update your React Native app to query for updates against your new CodePush
+                Server.
+                Due to React Native nature this change will require you to release new version of the
+                app for AppStore and PlayStore.
+              </p>
+              <h4
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                iOS
+              </h4>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Open <span class="italic">Info.plist</span> file in your Xcode project and add the
+                  following lines, replacing <span class="italic">server-url</span> with your CodePush
+                  server location
+                  and <span class="italic">deployment-key</span> with the deployment key of the
+                  deployment you want to target.
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;key&gt;CodePushDeploymentKey&lt;/key&gt;
 &lt;string&gt;deployment-key&lt;/string&gt;
 &lt;key&gt;CodePushServerURL&lt;/key&gt;
 &lt;string&gt;server-url&lt;/string&gt;</code>
                                            </pre>
-                                    </div>
+                  </div>
 
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Rebuild your app and submit it to the App Store.
-                                </li>
-                            </ul>
-                            <h4
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Android
-                            </h4>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Open <span class="italic">strings.xml</span> file in your Android project and add
-                                    the following line, replacing <span class="italic">server-url</span> with your
-                                    CodePush server location
-                                    and <span class="italic">deployment-key</span> with the deployment key of the
-                                    deployment you want to target.
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Rebuild your app and submit it to the App Store.
+                </li>
+              </ul>
+              <h4
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Android
+              </h4>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Open <span class="italic">strings.xml</span> file in your Android project and add
+                  the following line, replacing <span class="italic">server-url</span> with your
+                  CodePush server location
+                  and <span class="italic">deployment-key</span> with the deployment key of the
+                  deployment you want to target.
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 &lt;string moduleConfig=&quot;true&quot; name=&quot;CodePushDeploymentKey&quot;&gt;deployment-key&lt;/string&gt;
 &lt;string moduleConfig=&quot;true&quot; name=&quot;CodePushServerUrl&quot;&gt;server-url&lt;/string&gt;</code>
                                            </pre>
-                                    </div>
+                  </div>
 
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Rebuild your app and submit it to the Play Store.
-                                </li>
-                            </ul>
-                            <h3
-                                    class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
-                                    data-wow-delay=".1s">
-                                Releasing updates to your app
-                            </h3>
-                            <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
-                                Once your app has been configured to query for updates against the CodePush server, you
-                                can begin releasing updates to it.
-                            </p>
-                            <ul class="list-decimal list-inside mb-6">
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Navigate to the root of your React Native project and run the following command to
-                                    release an update to your iOS app:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Rebuild your app and submit it to the Play Store.
+                </li>
+              </ul>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                Releasing updates to your app
+              </h3>
+              <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                Once your app has been configured to query for updates against the CodePush server, you
+                can begin releasing updates to it.
+              </p>
+              <ul class="list-decimal list-inside mb-6">
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Navigate to the root of your React Native project and run the following command to
+                  release an update to your iOS app:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -1022,13 +1127,13 @@ Successfully added the "MyApp-iOS" app, along with the following default deploym
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    This command will create a new release for the <span class="italic">MyApp-iOS</span>
-                                    app, targeting the <span class="italic">ios</span> platform, and output the
-                                    generated bundle to the <span class="italic">./CodePush</span> directory.
-                                    Upon successful release, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  This command will create a new release for the <span class="italic">MyApp-iOS</span>
+                  app, targeting the <span class="italic">ios</span> platform, and output the
+                  generated bundle to the <span class="italic">./CodePush</span> directory.
+                  Upon successful release, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 Running "react-native bundle" command:
 
@@ -1048,16 +1153,16 @@ Upload progress:[==================================================] 100% 0.0s
 Successfully released an update containing the "./CodePush" directory to the "Staging" deployment of the "MyApp-iOS" app.
 </code>
                                            </pre>
-                                    </div>
-                                    Under the hood, the <span class="italic">code-push-standalone release-react</span>
-                                    command will bundle your app's JavaScript code and assets,
-                                    upload them to the CodePush server, and create a new release for the specified
-                                    deployment.
-                                    <br/>
-                                    The full list of options for fine-grained tuning of the release process can be found
-                                    by running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                  </div>
+                  Under the hood, the <span class="italic">code-push-standalone release-react</span>
+                  command will bundle your app's JavaScript code and assets,
+                  upload them to the CodePush server, and create a new release for the specified
+                  deployment.
+                  <br/>
+                  The full list of options for fine-grained tuning of the release process can be found
+                  by running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -1068,13 +1173,13 @@ Successfully released an update containing the "./CodePush" directory to the "St
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                </li>
-                                <li class="mb-2 text-body-color dark:text-dark-6">
-                                    Check deployment history for given application and deployment running:
-                                    <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
-                                        <code class="inline-flex">
+                    </code>
+                  </p>
+                </li>
+                <li class="mb-2 text-body-color dark:text-dark-6">
+                  Check deployment history for given application and deployment running:
+                  <p class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-4 pl-6 text-left items-center">
+                    <code class="inline-flex">
                                             <span class="flex gap-4">
                                                 <span class="shrink-0 text-gray-500">
                                                     $
@@ -1085,10 +1190,10 @@ Successfully released an update containing the "./CodePush" directory to the "St
                                                     </span>
                                                 </span>
                                             </span>
-                                        </code>
-                                    </p>
-                                    Upon successful execution, you will see output similar to the following:
-                                    <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
+                    </code>
+                  </p>
+                  Upon successful execution, you will see output similar to the following:
+                  <div class="mb-2 mt-2 text-sm sm:text-base bg-gray-800 text-white rounded-lg p-2 pl-6 text-left items-center">
                                            <pre class="language-javascript bg-gray-800"><code class="text-sm">
 ┌───────┬────────────────┬─────────────┬───────────┬─────────────────┬──────────────────────┐
 │ Label │ Release Time   │ App Version │ Mandatory │ Description     │ Install Metrics      │
@@ -1098,475 +1203,320 @@ Successfully released an update containing the "./CodePush" directory to the "St
 │ v2    │ 4 minutes ago  │ 0.0.1       │ No        │ fix misspelling │ No installs recorded │
 └───────┴────────────────┴─────────────┴───────────┴─────────────────┴──────────────────────┘</code>
                                            </pre>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--              <div class="w-full px-4 lg:w-4/12">
-                                    <div>
-                                      <div
-                                        class="wow fadeInUp relative mb-12 overflow-hidden rounded-[5px] bg-primary px-11 py-[60px] text-center lg:px-8"
-                                        data-wow-delay=".1s
-                                        "
-                                      >
-                                        <h3
-                                          class="mb-[6px] text-[28px] font-semibold leading-[40px] text-white"
-                                        >
-                                          Join our newsletter!
-                                        </h3>
-                                        <p class="mb-5 text-base text-white">
-                                          Enter your email to receive our latest newsletter.
-                                        </p>
-                                        <form>
-                                          <input
-                                            type="email"
-                                            placeholder="Your email address"
-                                            class="mb-4 h-[50px] w-full rounded-md border border-transparent bg-white/10 text-center text-base text-white outline-none placeholder:text-white/60 focus:border-white focus-visible:shadow-none"
-                                          />
-                                          <input
-                                            type="submit"
-                                            value="Subscribe Now"
-                                            class="mb-4 h-[50px] w-full cursor-pointer rounded-md bg-secondary text-center text-sm font-medium text-white transition duration-300 ease-in-out hover:bg-[#0BB489] hover:bg-opacity-90"
-                                          />
-                                        </form>
-                                        <p class="text-sm font-medium text-white">
-                                          Don't worry, we don't spam
-                                        </p>
-
-                                        <div>
-                                          <span class="absolute top-0 right-0">
-                                            <svg
-                                              width="46"
-                                              height="46"
-                                              viewBox="0 0 46 46"
-                                              fill="none"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <circle
-                                                cx="1.39737"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                            </svg>
-                                          </span>
-                                          <span class="absolute bottom-0 left-0">
-                                            <svg
-                                              width="46"
-                                              height="46"
-                                              viewBox="0 0 46 46"
-                                              fill="none"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <circle
-                                                cx="1.39737"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="44.6026"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 44.6026)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="7.9913"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 7.9913)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="32.3058"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 32.3058)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="1.39737"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 1.39737 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="13.6943"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 13.6943 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="25.9911"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 25.9911 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                              <circle
-                                                cx="38.288"
-                                                cy="20.0086"
-                                                r="1.39737"
-                                                transform="rotate(-90 38.288 20.0086)"
-                                                fill="white"
-                                                fill-opacity="0.44"
-                                              />
-                                            </svg>
-                                          </span>
-                                        </div>
-                                      </div>
-
-                                      <div class="flex flex-wrap mb-8 -mx-4">
-                                        <div class="w-full px-4">
-                                          <h2
-                                            class="wow fadeInUp relative pb-5 text-2xl font-semibold text-dark dark:text-white sm:text-[28px]"
-                                            data-wow-delay=".1s
-                                            "
-                                          >
-                                            Popular Articles
-                                          </h2>
-                                          <span
-                                            class="mb-10 inline-block h-[2px] w-20 bg-primary"
-                                          ></span>
-                                        </div>
-
-                                        <div class="w-full px-4 md:w-1/2 lg:w-full">
-                                          <div
-                                            class="flex items-center w-full pb-5 mb-5 border-b wow fadeInUp border-stroke dark:border-dark-3"
-                                            data-wow-delay=".1s
-                                            "
-                                          >
-                                            <div
-                                              class="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full"
-                                            >
-                                              <img
-                                                src="assets/images/blog/article-author-01.png"
-                                                alt="image"
-                                                class="w-full"
-                                              />
-                                            </div>
-                                            <div class="w-full">
-                                              <h4>
-                                                <a
-                                                  href="javascript:void(0)"
-                                                  class="inline-block mb-1 text-lg font-medium leading-snug text-dark hover:text-primary dark:text-dark-6 dark:hover:text-primary lg:text-base xl:text-lg"
-                                                >
-                                                  Create engaging online courses your student…
-                                                </a>
-                                              </h4>
-                                              <p class="text-sm text-body-color dark:text-dark-6">
-                                                Glomiya Lucy
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="w-full px-4 md:w-1/2 lg:w-full">
-                                          <div
-                                            class="flex items-center w-full pb-5 mb-5 border-b wow fadeInUp border-stroke dark:border-dark-3"
-                                            data-wow-delay=".1s
-                                            "
-                                          >
-                                            <div
-                                              class="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full"
-                                            >
-                                              <img
-                                                src="assets/images/blog/article-author-02.png"
-                                                alt="image"
-                                                class="w-full"
-                                              />
-                                            </div>
-                                            <div class="w-full">
-                                              <h4>
-                                                <a
-                                                  href="javascript:void(0)"
-                                                  class="inline-block mb-1 text-lg font-medium leading-snug text-dark hover:text-primary dark:text-dark-6 dark:hover:text-primary lg:text-base xl:text-lg"
-                                                >
-                                                  The ultimate formula for launching online course
-                                                </a>
-                                              </h4>
-                                              <p class="text-sm text-body-color dark:text-dark-6">
-                                                Andrio jeson
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="w-full px-4 md:w-1/2 lg:w-full">
-                                          <div
-                                            class="flex items-center w-full pb-5 mb-5 border-b wow fadeInUp border-stroke dark:border-dark-3"
-                                            data-wow-delay=".1s
-                                            "
-                                          >
-                                            <div
-                                              class="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full"
-                                            >
-                                              <img
-                                                src="assets/images/blog/article-author-03.png"
-                                                alt="image"
-                                                class="w-full"
-                                              />
-                                            </div>
-                                            <div class="w-full">
-                                              <h4>
-                                                <a
-                                                  href="javascript:void(0)"
-                                                  class="inline-block mb-1 text-lg font-medium leading-snug text-dark hover:text-primary dark:text-dark-6 dark:hover:text-primary lg:text-base xl:text-lg"
-                                                >
-                                                  50 Best web design tips & tricks that will help
-                                                  you
-                                                </a>
-                                              </h4>
-                                              <p class="text-sm text-body-color dark:text-dark-6">
-                                                Samoyel Dayno
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div class="w-full px-4 md:w-1/2 lg:w-full">
-                                          <div
-                                            class="flex items-center w-full pb-5 mb-5 border-0 wow fadeInUp border-stroke dark:border-dark-3 md:border-b lg:border-0"
-                                            data-wow-delay=".1s
-                                            "
-                                          >
-                                            <div
-                                              class="mr-5 h-20 w-full max-w-[80px] overflow-hidden rounded-full"
-                                            >
-                                              <img
-                                                src="assets/images/blog/article-author-04.png"
-                                                alt="image"
-                                                class="w-full"
-                                              />
-                                            </div>
-                                            <div class="w-full">
-                                              <h4>
-                                                <a
-                                                  href="javascript:void(0)"
-                                                  class="inline-block mb-1 text-lg font-medium leading-snug text-dark hover:text-primary dark:text-dark-6 dark:hover:text-primary lg:text-base xl:text-lg"
-                                                >
-                                                  The 8 best landing page builders, reviewed
-                                                </a>
-                                              </h4>
-                                              <p class="text-sm text-body-color dark:text-dark-6">
-                                                Andrio Glori
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div
-                                        class="wow fadeInUp mb-12 overflow-hidden rounded-[5px]"
-                                        data-wow-delay=".1s"
-                                      >
-                                        <img
-                                          src="assets/images/blog/bannder-ad.png"
-                                          alt="image"
-                                          class="w-full"
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>-->
-                </div>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
+          <div class="w-full px-4 lg:w-4/12">
+            <div>
+              <div
+                      class="wow fadeInUp relative mb-12 overflow-hidden rounded-[5px] bg-primary px-11 py-[60px] text-center lg:px-8"
+                      data-wow-delay=".1s
+                              "
+              >
+                <h3
+                        class="mb-[6px] text-[28px] font-semibold leading-[40px] text-white"
+                >
+                  Join Revopush!
+                </h3>
+                <p class="mb-5 text-base text-white">
+                  Avoid last-minute headaches!
+                </p>
+                <div class="text-center">
+                  <a
+                          href="/pricing.html"
+                          class="inline-block rounded-md border border-transparent bg-secondary px-7 py-3 text-base font-medium text-white transition hover:bg-[#0BB489]"
+                  >
+                    Try Revopush free
+                  </a>
+                </div>
+                <div>
+                                <span class="absolute top-0 right-0">
+                                  <svg
+                                          width="46"
+                                          height="46"
+                                          viewBox="0 0 46 46"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                            cx="1.39737"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                  </svg>
+                                </span>
+                  <span class="absolute bottom-0 left-0">
+                                  <svg
+                                          width="46"
+                                          height="46"
+                                          viewBox="0 0 46 46"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                  >
+                                    <circle
+                                            cx="1.39737"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="44.6026"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 44.6026)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="7.9913"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 7.9913)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="32.3058"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 32.3058)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="1.39737"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 1.39737 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="13.6943"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 13.6943 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="25.9911"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 25.9911 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                    <circle
+                                            cx="38.288"
+                                            cy="20.0086"
+                                            r="1.39737"
+                                            transform="rotate(-90 38.288 20.0086)"
+                                            fill="white"
+                                            fill-opacity="0.44"
+                                    />
+                                  </svg>
+                                </span>
+                </div>
+              </div>
+
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
 
 <!-- ====== Footer Section Start -->
@@ -1574,260 +1524,260 @@ Successfully released an update containing the "./CodePush" directory to the "St
         class="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]"
         data-wow-delay=".15s"
 >
+  <div class="container">
+    <div class="-mx-4 flex flex-wrap">
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-5/12">
+        <div class="mb-10 w-full">
+          <a
+                  href="javascript:void(0)"
+                  class="mb-6 inline-block max-w-[160px]"
+          >
+            <img
+                    src="assets/images/logo/logo-white-1.svg"
+                    alt="logo"
+                    class="max-w-full"
+            />
+          </a>
+          <p class="mb-8 max-w-[270px] text-base text-gray-7">
+            The Ultimate Cloud Alternative to Code Push
+          </p>
+          <div class="-mx-3 flex items-center">
+            <a
+                    href="javascript:void(0)"
+                    class="px-3 text-gray-7 hover:text-white"
+            >
+              <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill-current"
+              >
+                <path
+                        d="M16.294 8.86875H14.369H13.6815V8.18125V6.05V5.3625H14.369H15.8128C16.1909 5.3625 16.5003 5.0875 16.5003 4.675V1.03125C16.5003 0.653125 16.2253 0.34375 15.8128 0.34375H13.3034C10.5878 0.34375 8.69714 2.26875 8.69714 5.12187V8.1125V8.8H8.00964H5.67214C5.19089 8.8 4.74402 9.17812 4.74402 9.72812V12.2031C4.74402 12.6844 5.12214 13.1313 5.67214 13.1313H7.94089H8.62839V13.8188V20.7281C8.62839 21.2094 9.00652 21.6562 9.55652 21.6562H12.7878C12.994 21.6562 13.1659 21.5531 13.3034 21.4156C13.4409 21.2781 13.544 21.0375 13.544 20.8312V13.8531V13.1656H14.2659H15.8128C16.2596 13.1656 16.6034 12.8906 16.6721 12.4781V12.4438V12.4094L17.1534 10.0375C17.1878 9.79688 17.1534 9.52187 16.9471 9.24687C16.8784 9.075 16.569 8.90312 16.294 8.86875Z"
+                />
+              </svg>
+            </a>
+            <a
+                    href="javascript:void(0)"
+                    class="px-3 text-gray-7 hover:text-white"
+            >
+              <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill-current"
+              >
+                <path
+                        d="M20.1236 5.91236C20.2461 5.76952 20.0863 5.58286 19.905 5.64972C19.5004 5.79896 19.1306 5.8974 18.5837 5.95817C19.2564 5.58362 19.5693 5.04828 19.8237 4.39259C19.885 4.23443 19.7 4.09092 19.5406 4.16647C18.8931 4.47345 18.1945 4.70121 17.4599 4.83578C16.7338 4.11617 15.6988 3.6665 14.5539 3.6665C12.3554 3.6665 10.5725 5.32454 10.5725 7.36908C10.5725 7.65933 10.6081 7.94206 10.6752 8.21276C7.51486 8.06551 4.6968 6.71359 2.73896 4.64056C2.60477 4.49848 2.36128 4.51734 2.27772 4.69063C2.05482 5.15296 1.93056 5.66584 1.93056 6.20582C1.93056 7.49014 2.6332 8.62331 3.70132 9.28732C3.22241 9.27293 2.76441 9.17961 2.34234 9.02125C2.13684 8.94416 1.90127 9.07964 1.92888 9.28686C2.14084 10.8781 3.42915 12.1909 5.09205 12.5011C4.75811 12.586 4.40639 12.6311 4.04253 12.6311C3.95431 12.6311 3.86685 12.6284 3.78019 12.6231C3.55967 12.6094 3.38044 12.8067 3.47499 12.9954C4.09879 14.2404 5.44575 15.1096 7.0132 15.1367C5.65077 16.13 3.93418 16.7218 2.06882 16.7218C1.83882 16.7218 1.74015 17.0175 1.9442 17.1178C3.52016 17.8924 5.31487 18.3332 7.22182 18.3332C14.545 18.3332 18.549 12.6914 18.549 7.79843C18.549 7.63827 18.545 7.47811 18.5377 7.31945C19.1321 6.92012 19.6664 6.44528 20.1236 5.91236Z"
+                />
+              </svg>
+            </a>
+            <a
+                    href="javascript:void(0)"
+                    class="px-3 text-gray-7 hover:text-white"
+            >
+              <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill-current"
+              >
+                <path
+                        d="M11.0297 14.4305C12.9241 14.4305 14.4598 12.8948 14.4598 11.0004C14.4598 9.10602 12.9241 7.57031 11.0297 7.57031C9.13529 7.57031 7.59958 9.10602 7.59958 11.0004C7.59958 12.8948 9.13529 14.4305 11.0297 14.4305Z"
+                />
+                <path
+                        d="M14.7554 1.8335H7.24463C4.25807 1.8335 1.83334 4.25823 1.83334 7.24479V14.6964C1.83334 17.7421 4.25807 20.1668 7.24463 20.1668H14.6962C17.7419 20.1668 20.1667 17.7421 20.1667 14.7555V7.24479C20.1667 4.25823 17.7419 1.8335 14.7554 1.8335ZM11.0296 15.4948C8.51614 15.4948 6.53496 13.4545 6.53496 11.0002C6.53496 8.54586 8.54571 6.50554 11.0296 6.50554C13.4839 6.50554 15.4946 8.54586 15.4946 11.0002C15.4946 13.4545 13.5134 15.4948 11.0296 15.4948ZM17.2393 6.91952C16.9436 7.24479 16.5 7.42221 15.9973 7.42221C15.5538 7.42221 15.1102 7.24479 14.7554 6.91952C14.4301 6.59425 14.2527 6.18027 14.2527 5.67758C14.2527 5.17489 14.4301 4.79049 14.7554 4.43565C15.0807 4.08081 15.4946 3.90339 15.9973 3.90339C16.4409 3.90339 16.914 4.08081 17.2393 4.40608C17.535 4.79049 17.7419 5.23403 17.7419 5.70715C17.7124 6.18027 17.535 6.59425 17.2393 6.91952Z"
+                />
+                <path
+                        d="M16.0276 4.96777C15.6432 4.96777 15.318 5.29304 15.318 5.67745C15.318 6.06186 15.6432 6.38713 16.0276 6.38713C16.412 6.38713 16.7373 6.06186 16.7373 5.67745C16.7373 5.29304 16.4416 4.96777 16.0276 4.96777Z"
+                />
+              </svg>
+            </a>
+            <a
+                    href="javascript:void(0)"
+                    class="px-3 text-gray-7 hover:text-white"
+            >
+              <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fill-current"
+              >
+                <path
+                        d="M18.8065 1.8335H3.16399C2.42474 1.8335 1.83334 2.42489 1.83334 3.16414V18.8362C1.83334 19.5459 2.42474 20.1668 3.16399 20.1668H18.7473C19.4866 20.1668 20.078 19.5754 20.078 18.8362V3.13457C20.1371 2.42489 19.5457 1.8335 18.8065 1.8335ZM7.24464 17.4168H4.55379V8.69371H7.24464V17.4168ZM5.88443 7.48135C4.99733 7.48135 4.31721 6.77167 4.31721 5.91414C4.31721 5.05661 5.0269 4.34694 5.88443 4.34694C6.74196 4.34694 7.45163 5.05661 7.45163 5.91414C7.45163 6.77167 6.8011 7.48135 5.88443 7.48135ZM17.4463 17.4168H14.7554V13.1883C14.7554 12.183 14.7258 10.8523 13.336 10.8523C11.9167 10.8523 11.7097 11.976 11.7097 13.0996V17.4168H9.01884V8.69371H11.6506V9.90608H11.6801C12.0645 9.1964 12.9221 8.48672 14.2527 8.48672C17.0027 8.48672 17.5054 10.2609 17.5054 12.6856V17.4168H17.4463Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="mb-10 w-full">
+          <h4 class="mb-9 text-lg font-semibold text-white">About Us</h4>
+          <ul>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Features
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                About
+              </a>
+            </li>
+            <!--                <li>-->
+            <!--                  <a-->
+            <!--                    href="javascript:void(0)"-->
+            <!--                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"-->
+            <!--                  >-->
+            <!--                    Testimonial-->
+            <!--                  </a>-->
+            <!--                </li>-->
+          </ul>
+        </div>
+      </div>
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="mb-10 w-full">
+          <h4 class="mb-9 text-lg font-semibold text-white">Features</h4>
+          <ul>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                How it works
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Privacy policy
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Refund policy
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
+        <div class="mb-10 w-full">
+          <h4 class="mb-9 text-lg font-semibold text-white">
+            Our Products
+          </h4>
+          <ul>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Cloud Service
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                React Native SDK
+              </a>
+            </li>
+            <li>
+              <a
+                      href="javascript:void(0)"
+                      class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
+              >
+                Analytics
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+          class="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]"
+  >
     <div class="container">
-        <div class="-mx-4 flex flex-wrap">
-            <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-5/12">
-                <div class="mb-10 w-full">
-                    <a
-                            href="javascript:void(0)"
-                            class="mb-6 inline-block max-w-[160px]"
-                    >
-                        <img
-                                src="assets/images/logo/logo-white-1.svg"
-                                alt="logo"
-                                class="max-w-full"
-                        />
-                    </a>
-                    <p class="mb-8 max-w-[270px] text-base text-gray-7">
-                        The Ultimate Cloud Alternative to Code Push
-                    </p>
-                    <div class="-mx-3 flex items-center">
-                        <a
-                                href="javascript:void(0)"
-                                class="px-3 text-gray-7 hover:text-white"
-                        >
-                            <svg
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="fill-current"
-                            >
-                                <path
-                                        d="M16.294 8.86875H14.369H13.6815V8.18125V6.05V5.3625H14.369H15.8128C16.1909 5.3625 16.5003 5.0875 16.5003 4.675V1.03125C16.5003 0.653125 16.2253 0.34375 15.8128 0.34375H13.3034C10.5878 0.34375 8.69714 2.26875 8.69714 5.12187V8.1125V8.8H8.00964H5.67214C5.19089 8.8 4.74402 9.17812 4.74402 9.72812V12.2031C4.74402 12.6844 5.12214 13.1313 5.67214 13.1313H7.94089H8.62839V13.8188V20.7281C8.62839 21.2094 9.00652 21.6562 9.55652 21.6562H12.7878C12.994 21.6562 13.1659 21.5531 13.3034 21.4156C13.4409 21.2781 13.544 21.0375 13.544 20.8312V13.8531V13.1656H14.2659H15.8128C16.2596 13.1656 16.6034 12.8906 16.6721 12.4781V12.4438V12.4094L17.1534 10.0375C17.1878 9.79688 17.1534 9.52187 16.9471 9.24687C16.8784 9.075 16.569 8.90312 16.294 8.86875Z"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                                href="javascript:void(0)"
-                                class="px-3 text-gray-7 hover:text-white"
-                        >
-                            <svg
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="fill-current"
-                            >
-                                <path
-                                        d="M20.1236 5.91236C20.2461 5.76952 20.0863 5.58286 19.905 5.64972C19.5004 5.79896 19.1306 5.8974 18.5837 5.95817C19.2564 5.58362 19.5693 5.04828 19.8237 4.39259C19.885 4.23443 19.7 4.09092 19.5406 4.16647C18.8931 4.47345 18.1945 4.70121 17.4599 4.83578C16.7338 4.11617 15.6988 3.6665 14.5539 3.6665C12.3554 3.6665 10.5725 5.32454 10.5725 7.36908C10.5725 7.65933 10.6081 7.94206 10.6752 8.21276C7.51486 8.06551 4.6968 6.71359 2.73896 4.64056C2.60477 4.49848 2.36128 4.51734 2.27772 4.69063C2.05482 5.15296 1.93056 5.66584 1.93056 6.20582C1.93056 7.49014 2.6332 8.62331 3.70132 9.28732C3.22241 9.27293 2.76441 9.17961 2.34234 9.02125C2.13684 8.94416 1.90127 9.07964 1.92888 9.28686C2.14084 10.8781 3.42915 12.1909 5.09205 12.5011C4.75811 12.586 4.40639 12.6311 4.04253 12.6311C3.95431 12.6311 3.86685 12.6284 3.78019 12.6231C3.55967 12.6094 3.38044 12.8067 3.47499 12.9954C4.09879 14.2404 5.44575 15.1096 7.0132 15.1367C5.65077 16.13 3.93418 16.7218 2.06882 16.7218C1.83882 16.7218 1.74015 17.0175 1.9442 17.1178C3.52016 17.8924 5.31487 18.3332 7.22182 18.3332C14.545 18.3332 18.549 12.6914 18.549 7.79843C18.549 7.63827 18.545 7.47811 18.5377 7.31945C19.1321 6.92012 19.6664 6.44528 20.1236 5.91236Z"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                                href="javascript:void(0)"
-                                class="px-3 text-gray-7 hover:text-white"
-                        >
-                            <svg
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="fill-current"
-                            >
-                                <path
-                                        d="M11.0297 14.4305C12.9241 14.4305 14.4598 12.8948 14.4598 11.0004C14.4598 9.10602 12.9241 7.57031 11.0297 7.57031C9.13529 7.57031 7.59958 9.10602 7.59958 11.0004C7.59958 12.8948 9.13529 14.4305 11.0297 14.4305Z"
-                                />
-                                <path
-                                        d="M14.7554 1.8335H7.24463C4.25807 1.8335 1.83334 4.25823 1.83334 7.24479V14.6964C1.83334 17.7421 4.25807 20.1668 7.24463 20.1668H14.6962C17.7419 20.1668 20.1667 17.7421 20.1667 14.7555V7.24479C20.1667 4.25823 17.7419 1.8335 14.7554 1.8335ZM11.0296 15.4948C8.51614 15.4948 6.53496 13.4545 6.53496 11.0002C6.53496 8.54586 8.54571 6.50554 11.0296 6.50554C13.4839 6.50554 15.4946 8.54586 15.4946 11.0002C15.4946 13.4545 13.5134 15.4948 11.0296 15.4948ZM17.2393 6.91952C16.9436 7.24479 16.5 7.42221 15.9973 7.42221C15.5538 7.42221 15.1102 7.24479 14.7554 6.91952C14.4301 6.59425 14.2527 6.18027 14.2527 5.67758C14.2527 5.17489 14.4301 4.79049 14.7554 4.43565C15.0807 4.08081 15.4946 3.90339 15.9973 3.90339C16.4409 3.90339 16.914 4.08081 17.2393 4.40608C17.535 4.79049 17.7419 5.23403 17.7419 5.70715C17.7124 6.18027 17.535 6.59425 17.2393 6.91952Z"
-                                />
-                                <path
-                                        d="M16.0276 4.96777C15.6432 4.96777 15.318 5.29304 15.318 5.67745C15.318 6.06186 15.6432 6.38713 16.0276 6.38713C16.412 6.38713 16.7373 6.06186 16.7373 5.67745C16.7373 5.29304 16.4416 4.96777 16.0276 4.96777Z"
-                                />
-                            </svg>
-                        </a>
-                        <a
-                                href="javascript:void(0)"
-                                class="px-3 text-gray-7 hover:text-white"
-                        >
-                            <svg
-                                    width="22"
-                                    height="22"
-                                    viewBox="0 0 22 22"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="fill-current"
-                            >
-                                <path
-                                        d="M18.8065 1.8335H3.16399C2.42474 1.8335 1.83334 2.42489 1.83334 3.16414V18.8362C1.83334 19.5459 2.42474 20.1668 3.16399 20.1668H18.7473C19.4866 20.1668 20.078 19.5754 20.078 18.8362V3.13457C20.1371 2.42489 19.5457 1.8335 18.8065 1.8335ZM7.24464 17.4168H4.55379V8.69371H7.24464V17.4168ZM5.88443 7.48135C4.99733 7.48135 4.31721 6.77167 4.31721 5.91414C4.31721 5.05661 5.0269 4.34694 5.88443 4.34694C6.74196 4.34694 7.45163 5.05661 7.45163 5.91414C7.45163 6.77167 6.8011 7.48135 5.88443 7.48135ZM17.4463 17.4168H14.7554V13.1883C14.7554 12.183 14.7258 10.8523 13.336 10.8523C11.9167 10.8523 11.7097 11.976 11.7097 13.0996V17.4168H9.01884V8.69371H11.6506V9.90608H11.6801C12.0645 9.1964 12.9221 8.48672 14.2527 8.48672C17.0027 8.48672 17.5054 10.2609 17.5054 12.6856V17.4168H17.4463Z"
-                                />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+      <div class="-mx-4 flex flex-wrap">
+        <div class="w-full px-4 md:w-2/3 lg:w-1/2">
+          <div class="my-1">
+            <div
+                    class="-mx-3 flex items-center justify-center md:justify-start"
+            >
+              <a
+                      href="javascript:void(0)"
+                      class="px-3 text-base text-gray-7 hover:text-white hover:underline"
+              >
+                Privacy policy
+              </a>
+              <a
+                      href="javascript:void(0)"
+                      class="px-3 text-base text-gray-7 hover:text-white hover:underline"
+              >
+                Legal notice
+              </a>
+              <a
+                      href="javascript:void(0)"
+                      class="px-3 text-base text-gray-7 hover:text-white hover:underline"
+              >
+                Terms of service
+              </a>
             </div>
-            <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-                <div class="mb-10 w-full">
-                    <h4 class="mb-9 text-lg font-semibold text-white">About Us</h4>
-                    <ul>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Features
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                About
-                            </a>
-                        </li>
-                        <!--                <li>-->
-                        <!--                  <a-->
-                        <!--                    href="javascript:void(0)"-->
-                        <!--                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"-->
-                        <!--                  >-->
-                        <!--                    Testimonial-->
-                        <!--                  </a>-->
-                        <!--                </li>-->
-                    </ul>
-                </div>
-            </div>
-            <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-                <div class="mb-10 w-full">
-                    <h4 class="mb-9 text-lg font-semibold text-white">Features</h4>
-                    <ul>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                How it works
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Privacy policy
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Terms of Service
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Refund policy
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-2/12 xl:w-2/12">
-                <div class="mb-10 w-full">
-                    <h4 class="mb-9 text-lg font-semibold text-white">
-                        Our Products
-                    </h4>
-                    <ul>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Cloud Service
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                React Native SDK
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                            >
-                                Analytics
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div
-            class="mt-12 border-t border-[#8890A4] border-opacity-40 py-8 lg:mt-[60px]"
-    >
-        <div class="container">
-            <div class="-mx-4 flex flex-wrap">
-                <div class="w-full px-4 md:w-2/3 lg:w-1/2">
-                    <div class="my-1">
-                        <div
-                                class="-mx-3 flex items-center justify-center md:justify-start"
-                        >
-                            <a
-                                    href="javascript:void(0)"
-                                    class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                            >
-                                Privacy policy
-                            </a>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                            >
-                                Legal notice
-                            </a>
-                            <a
-                                    href="javascript:void(0)"
-                                    class="px-3 text-base text-gray-7 hover:text-white hover:underline"
-                            >
-                                Terms of service
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div>
+  <div>
         <span class="absolute left-0 top-0 z-[-1]">
           <img src="assets/images/footer/shape-1.svg" alt=""/>
         </span>
 
-        <span class="absolute bottom-0 right-0 z-[-1]">
+    <span class="absolute bottom-0 right-0 z-[-1]">
           <img src="assets/images/footer/shape-3.svg" alt=""/>
         </span>
 
-        <span class="absolute right-0 top-0 z-[-1]">
+    <span class="absolute right-0 top-0 z-[-1]">
           <svg
                   width="102"
                   height="102"
@@ -2082,7 +2032,7 @@ Successfully released an update containing the "./CodePush" directory to the "St
             ></path>
           </svg>
         </span>
-    </div>
+  </div>
 </footer>
 <!-- ====== Footer Section End -->
 
@@ -2119,9 +2069,9 @@ Successfully released an update containing the "./CodePush" directory to the "St
     function onScroll(event) {
         const sections = document.querySelectorAll(".ud-menu-scroll");
         const scrollPos =
-            window.pageYOffset ||
-            document.documentElement.scrollTop ||
-            document.body.scrollTop;
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop;
 
         for (let i = 0; i < sections.length; i++) {
             const currLink = sections[i];
@@ -2129,12 +2079,12 @@ Successfully released an update containing the "./CodePush" directory to the "St
             const refElement = document.querySelector(val);
             const scrollTopMinus = scrollPos + 73;
             if (
-                refElement.offsetTop <= scrollTopMinus &&
-                refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+              refElement.offsetTop <= scrollTopMinus &&
+              refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
             ) {
                 document
-                    .querySelector(".ud-menu-scroll")
-                    .classList.remove("active");
+                  .querySelector(".ud-menu-scroll")
+                  .classList.remove("active");
                 currLink.classList.add("active");
             } else {
                 currLink.classList.remove("active");
@@ -2159,10 +2109,10 @@ Successfully released an update containing the "./CodePush" directory to the "St
             // === logo change
             if (ud_header.classList.contains("sticky")) {
                 document.querySelector(".header-logo").src =
-                    "assets/images/logo/logo-1.svg"
+                  "assets/images/logo/logo-1.svg"
             } else {
                 document.querySelector(".header-logo").src =
-                    "assets/images/logo/logo-white-1.svg"
+                  "assets/images/logo/logo-white-1.svg"
             }
         }
 
@@ -2171,7 +2121,7 @@ Successfully released an update containing the "./CodePush" directory to the "St
                 // === logo change
                 if (ud_header.classList.contains("sticky")) {
                     document.querySelector(".header-logo").src =
-                        "assets/images/logo/logo-white-1.svg"
+                      "assets/images/logo/logo-white-1.svg"
                 }
             }
         }
@@ -2179,8 +2129,8 @@ Successfully released an update containing the "./CodePush" directory to the "St
         // show or hide the back-top-top button
         const backToTop = document.querySelector(".back-to-top");
         if (
-            document.body.scrollTop > 50 ||
-            document.documentElement.scrollTop > 50
+          document.body.scrollTop > 50 ||
+          document.documentElement.scrollTop > 50
         ) {
             backToTop.style.display = "flex";
         } else {
@@ -2213,8 +2163,8 @@ Successfully released an update containing the "./CodePush" directory to the "St
     })(window.lintrk);
 </script>
 <noscript>
-    <img height="1" width="1" style="display:none;" alt=""
-         src="https://px.ads.linkedin.com/collect/?pid=7904489&fmt=gif"/>
+  <img height="1" width="1" style="display:none;" alt=""
+       src="https://px.ads.linkedin.com/collect/?pid=7904489&fmt=gif"/>
 </noscript>
 </body>
 </html>
