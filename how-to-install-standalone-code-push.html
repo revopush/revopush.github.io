@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth" xmlns="http://www.w3.org/1999/html">
+<html lang="en" class="scroll-smooth" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -1207,6 +1207,34 @@ Successfully released an update containing the "./CodePush" directory to the "St
                 </li>
               </ul>
             </div>
+              <h3
+                      class="wow fadeInUp mb-6 text-2xl font-bold text-dark dark:text-white sm:text-[28px] sm:leading-[40px]"
+                      data-wow-delay=".1s">
+                  Summary
+              </h3>
+              <p class="mb-4 text-base text-justify text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                  When deciding between a Standalone CodePush Server and a Software as a Service (SaaS) solution, it's important to consider various factors such as overall cost, scalability, and maintenance.
+                  Based on what we have observed at Revopush, for production-grade applications, you will need at least:
+              </p>
+                <ul class="list-disc list-inside mb-6">
+                  <li class="mb-2 text-body-color dark:text-dark-6">
+                      3 Premium V3 App Service instances. Price starts from <span class="font-bold">$64.97 per month</span> for each for Pay As You Go plan. You can find more information on <a href="https://azure.microsoft.com/en-gb/pricing/details/app-service/linux/" class="text-primary hover:text-primary">Azure App Service pricing</a>.
+                  </li>
+                  <li class="mb-2 text-body-color dark:text-dark-6">
+                      Redis Cache instance for analytics and better performance. Min price is <span class="font-bold">$100.740 per month</span> <a href="https://azure.microsoft.com/en-us/pricing/details/cache/" class="text-primary hover:text-primary"> for C1 Production ready Standard Instance. </a>
+                  </li>
+                  <li class="mb-2 text-body-color dark:text-dark-6">
+                      Support. Microsoft Azure Standard support plan will cost you <span class="font-bold">$100 per month</span> <a href="https://azure.microsoft.com/en-us/support/plans" class="text-primary hover:text-primary"> for Production workload environment</a>.
+                  </li>
+                  <li class="mb-2 text-body-color dark:text-dark-6">
+                      Update the Node.js version for Standalone CodePush Server <span class="font-bold">before April 30, 2025</span>.
+                      <a href="https://github.com/nodejs/Release" class="text-primary hover:text-primary"> Node.js 18.x reaches end-of-life on that date</a>,
+                      and Azure App Service will stop providing security patches and support for it.
+                  </li>
+                </ul>
+              <p class="mb-4 text-base text-body-color dark:text-dark-6" data-wow-delay=".1s">
+                  Alternatively, you can <a href="pricing.html" class="text-primary hover:text-primary">try Revopush for free</a> and enjoy all the benefits without the hassle.
+              </p>
           </div>
           <div class="w-full px-4 lg:w-4/12">
             <div>
